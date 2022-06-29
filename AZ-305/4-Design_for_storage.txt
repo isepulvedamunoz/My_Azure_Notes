@@ -1,0 +1,48 @@
+Design for data and storage for relational solutions
+
+
+Ways to deploy an Data Base instance in Azure
+
+
+    SQL databases
+
+        Azure SQL Database is a PaaS deployment option of Azure SQL that abstracts both the OS and the SQL Server instance. 
+        It is a highly scalable, intelligent, relational database service built for the cloud with the industry's highest availability SLA.
+
+
+        - All modern characteristics for storage
+
+        - SQL Database is also the only deployment option that supports scenarios that require:
+
+        - Very large databases (currently up to 100TB)
+
+        - Autoscaling for unpredictable workloads (serverless)
+
+
+
+    Managment instance
+
+    Azure SQL Managed Instance is a PaaS deployment option of Azure SQL. It provides an instance of SQL Server, 
+    but removes much of the overhead of managing a virtual machine. Most of the features available in SQL Server 
+    are available in SQL Managed Instance.
+
+        - Lift and shift migration from on-premises
+
+        - Automatic patching and version updates
+
+        - Automated backups
+
+        - High availability
+
+        - Reduced management overhead
+
+
+        
+
+    SQL server on virtual machines
+
+        - All your SQL Server skills should directly transfer, though Azure can help automate backups and security patches.
+
+        - You have access to the full capabilities of SQL Server
+
+        - You're responsible for updating and patching the OS and SQL Server

@@ -1,0 +1,207 @@
+Design for Gobernance
+
+    Gobernace prvides mechanism and processes to maintain control over your apps and resources in Azure.
+    To effectively apply your gobernance strategies, you must first create a hierarchical structure. 
+
+    A typical Azure hierarchy has four levels:
+
+    1.- Management groups
+    2.- Subscriptions
+    3.- Resource groups
+    4.- Resources
+
+
+Design for Management groups
+
+    Are containers that helps you manage access, policy and compliance across multiple subscriptions. You can use management groups to:
+
+    - Limit in wich regions, cirtual machines can be created.
+    - Provide user access to multiple subsriptions.
+    - Monitor and audit, across subscriptions, role, and policy assignments.
+
+
+    Things to know about management groups
+
+    - Management groups can be used to aggregate policy and initiative assignments via Azure Policy.
+    - A management group tree can support up to six levels of depth.
+    - Azure role-based access control authorization for management group operations isn't enable default.
+    - By default, all new subscriptions will be placed under the root management group.
+
+
+
+    Things to consider when creating management groups
+
+    - Design management groups with governance in mind.
+    - Keep the management group hierarchy reasonably flat.
+    - Consider a top-level management group.
+    - Consider an organizational or departamental structure.
+    - Consider a geographical structure.
+    - Consider a production management group.
+    - Consider a sandbox management group.
+    - Consider isolating sensitive information in a separate management group.
+
+
+Design for subscriptions
+
+    Azure subsriptions are logical containers that serve as units of management and scale and billing boundaries. Limits and quotas can be applied, and each organization can use subscriptions to manage costs and resources by group.
+
+
+    Things to know about subscriptions
+
+    Using Azure require an Azure subscription. A subscription provides you with a logical container to provision and pay for Azure products and services. There are several types of subcriptions, such as Enterprise Agreement and Pay as you Go.
+
+    You can use subscriptions to:
+
+    - Organize specialized workloads that need to scale outside the existing subscription limits.
+    - Provide different billing environments such as development, test and production.
+    - Achieve compliance by applying policies to a subscription.
+    - Manage and track costs for you organizational structure.
+
+
+    Things to consider when creating subscriptions
+
+    - Treat subscriptions as a democratized unit of management.
+    - Group subscriptions together under management groups.
+    - Consider a dedicated shared services subcription.
+    - Consider subscription scale limits.
+    - Consider administrative management.
+    - Consider how you will assign Azure policies?
+    - Consider network topologies.
+    - Consider making subscription owners aware of their roles and responsabilities.
+
+
+
+
+Design for resource groups
+
+    Resource groups are logical containers into wich Azure resources are deployed and managed. These resources can include web apps, databases and storage accounts. You can use resource groups to:
+
+    - Place resources of similar usage, type, or location in logical groups.
+    - Organize resources by life cycle so all the resources can be created or deleted at the same time.
+    - Apply role permissions to a group of resources or give a group access to administer a group of resources.
+    - Use resource locks to protect individual resources from deletion or change.
+
+
+    Things to know about resource groups
+
+    - Resource groups have their own location assigned.
+    - If the resource groups region is temporarily unavailable, you can't update resources in the resource group because the metadata is unavailable.
+    - Resources in the resource group can be in different regions.
+    - A resource can connect to resources in other resource group. 
+    - Resources can be moved between resource groups.
+    - You can add resource to or remove a resource from a resource group at any time.
+    - Resource groups can't be nested.
+    - Each resource must be in one, and only one, resource group.
+    - Resources groups cannot be renamed.
+
+
+    Things to consider when creating resource groups
+
+    - Consider group by type.
+    - Consider group by app.
+    - Consider group by department, group by location (region), and group by billing (cost center).
+    - Consider a combination of organizational strategies.
+    - Consider resource life cycle.
+    - Consider administration overhead.
+    - Consider resource access control.
+    - Consider compliance requirements.
+
+
+Design for resource tags
+
+    Resource tags are another way to organize resources. Tags provide ectra info, or metadata about your resources.
+
+    Things to know about resource tags
+
+    - Consists of a name-value pair.
+    - You can assign one or more tags to each resource, subscription or resource group.
+    - You can add, modify or delete resource tags.
+    - You can apply to resource group, but not to resources by default, in the resource group.
+
+
+Design for AZure policy
+
+    Azure policy is a service in Azure that enables you to create, assign and manage policies that control or audit your resources. These policies enforce different rules over your resource configurations, so that those configurations stay compliant with corporate standars.
+
+
+    Things to know about
+
+    - Lets you scope and enforce your policies at different levels in the organizational hierarchy.
+    - Are inherited down the hierarchy.
+    - Evaluates your resources and highlights resorces that aren't compliant with the policies you've created.
+    - Can prevent noncompliant resources from being created.
+    - Can automatically remediate noncompliant resources.
+    - Evaluates all resources in Azure and Arc enabled resources.
+    - Integrates with Azure DevOps by applying pre-deployment ans post-deloyment policies.
+
+
+    Things to consider
+
+    - Consider using the Azure policy compliance dashboard
+    - Consider when Azure policy evaluates resources
+    - Consider what you will do if a resources is non-compliant
+    - Consider when to automatically remediate non-compliant resources
+    - Consider how Azure policy is different from role-based access control (RBAC)
+
+
+
+    ****************************************************************************************
+
+    Differences between Azure policy and RBAC
+
+    - Use Azure Policy to ensure that the resource state is compliant to you organization's business rules. Compliance doesn't depend on who made the change or who has permission to make changes. Azure policy will evaluate the state of a resource, and act to ensure the resource stays compliant.
+
+    - Use Azure RBAC to focus on user actions at different scopes. Azure RBAC manages who has acces to Azure resources, what they can do with those resources, and what areas they can access. If user have permission in RBAC, but the result of his action is in non-compliant, Azure policy blocks the action.
+
+    ******************************************************************************************
+
+
+Design for role-based access control (RBAC)
+
+    What is Azure RBAC?
+
+    RBACs allows you to grant access to AZure resources that you control.
+    
+    - Allow one user to manage VMs in a subscription and another user to manage VNETs.
+    - Allow a DB admin group to manage SQL DB in a subscription.
+    - Allow a user to manage all resources in a resource group, such as virtual machines, websites ans subnets.
+    - Allow an application to access all resources in a resource group.
+
+
+    How does role-bases access control works?
+
+    Azure RBAC evaluates each request for access. The evaluations will detrermine if access should be blocked, not allowed or allowed.
+
+
+    Things to consider
+
+    - Remember RBAC is an allow model.
+    - Assign at the highest scope level that meets the requirements
+    - Only grant users the access they need.
+    - Assign roles to groups, not users.
+    - Know when to use Azure policies.
+    - Know when to create a sutom role.
+    - Consider what happens if you have overlapping role assignments.
+
+
+
+Design for Azure blueprints
+
+    Azure Blue prints lets you define a repeatable set of gobernance tools and standard Azure resources that your organization requires. Azure Blue prints are used to scale governance practices throughout an organization.
+
+    A blueprint is a package related to the implementation of Azure cloud services, security and design. A blue print can be reused to maintain consistency and compliance.
+
+    Whit Azure Blue prints, can create:
+
+    - Resource Group
+    - Azure resource manager Template
+    - Policy assignment
+    - Role assignment
+
+
+    How are Azure Bluprints different from Azure policy
+
+    A policy can be included as one of many artifacts in a blueprint definition. Including a policy in a blueprint enables the creation of the right pattern or design during assignment of the blueprint. 
+
+
+

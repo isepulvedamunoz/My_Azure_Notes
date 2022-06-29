@@ -1,0 +1,20 @@
+Azure Resources Manager
+
+Beneficios
+
+-   Puede implementar, administrar y monitorear todos los recursos de su solución como un grupo, en lugar de manejar estos recursos individualmente.
+-   Puede implementar repetidamente su solución a lo largo del ciclo de vida del desarrollo y tener la seguridad de que sus recursos se implementan en un estado uniforme.
+-   Puede administrar su infraestructura a través de plantillas declarativas en lugar de scripts.
+-   Puede definir las dependencias entre los recursos para que se implementen en el orden correcto.
+-   Puede aplicar el control de acceso a todos los servicios de su grupo de recursos porque el control de acceso basado en funciones (RBAC) está integrado de forma nativa en la plataforma de gestión.
+-   Puede aplicar etiquetas a los recursos para organizar lógicamente todos los recursos de su suscripción.
+-   Puede aclarar la facturación de su organización al ver los costos de un grupo de recursos que comparten la misma etiqueta.
+
+
+Resources Group
+
+-   Resources can only exist in one resource group
+-   Resource group cannot be renamed
+-   Resources group can have resources from many differents regiones
+-   If delete a resource group, all resources contained are deleted.
+

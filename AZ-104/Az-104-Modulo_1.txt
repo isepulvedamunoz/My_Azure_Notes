@@ -1,0 +1,78 @@
+Introducciona los aspectos basicos de Azure
+
+    Indtroducción
+
+    Azure es una plataforma de informática en la nube, con un conjunto de servicios
+
+
+
+        ¿Que es la informatica en la nube?
+
+
+        ¿Por que es mas barato la informatica en la nube?
+
+
+        ¿Por que debería migrar a la nube?
+
+
+
+    ¿Que es Azure?
+
+
+        ¿Que ofrece Azure?
+
+
+        ¿Que puedo hacer en azure?
+
+
+        ¿Que es Azure Portal?
+
+
+        ¿Que es Azure Marketplace?
+
+
+
+    Paseo por los servicios de Azure
+
+        Servicios de Azure
+
+
+        Categorías de servicios
+
+
+    Introduccion a las cuentas de Azure
+
+
+        Cuentas de Azure
+
+
+
+Conceptos fundamentales de la nube de Azure
+
+    Modelos de nube
+
+        Nube publica
+
+
+        Nube privada
+
+
+        Nube Hibrida
+
+
+    Categorias de los Servicios de Nube
+
+
+    Introduccion a las suscripciones, los grupos de administracion y recursos de Azure
+
+    
+    Regiones, zonas de disponibilidad, pares de regiones de Azure
+
+
+    Recursos, Grupo de recursos
+
+
+    Azure Resources Manager
+
+
+    

@@ -1,0 +1,401 @@
+Azure Active Directory
+
+Caracteristicas
+
+-   Administracion de aplicaciones
+-   Autenticación
+-   Soporte a desarrolladores
+-   Escenarios negocio a negocio (B2B)
+-   Escenarios negocio a cliente (B2C)
+-   Acceso condicional
+
+-   Usuarios de empresa
+-   Identidad hibrida (on-premise)
+-   Proteccion de Identidad
+-   Manejo de identidad privilegiada
+-   Infromes y supervisión
+
+
+
+Terminología en add
+
+    -   Identidad: metodo de autenticacion, como certificados.
+    -   Cuenta: utiliza una identidad para logearse
+    -   Cuenta de ADD: tipo de cuenta (prof., estuadiante,etc)
+    -   Administrador de cuenta: Asociada a cuenta de azure y quien gestiona la facturacion 
+    -   Administrador de servicios: quien tiene control de todos los servicios
+    -   Propietario: quien desarrolla o crea un servicios
+    -   Admin. global de Azure:
+    -   Suscripcion de azure: quien tiene un directorio activo, y acceso a los servicios.
+    -   Inquilino o Tenant: instancia activa o directorio activo, respectivo a una organizacion.
+    -   Multi tenant: directorio activo a mas de una organizacion.
+    -   Cuenta Microsoft: asociado a outlook, hotmail, xbox, etc.
+    -   Dominio personalizado: Dominio asociado a Microsoft.
+
+
+Retos de la Identidad como factor clave
+
+    -   Explosion de dispositivos y aplicaciones fuera de la organizacion
+    -   Incremento en ataques de identidad y falta de visibilidad y control.
+    -   Evolucion de las regulaciones.
+    -   Construye experiencias flexibles centradas en el Usuario.
+    -   Proteger a usuarios, apolicaciones y marca.
+    -   Escala global de los servicios.
+    -   Es el nuevo panel de control, donde interactuan servicios, aplicaciones, usuarios, etc.
+
+
+Autenticacion
+
+    ¿Que es la autenticacion?
+
+        Conciste en comprobar o autenticar las credenciales cuando un usuario inicia sesión.
+
+    Componentes
+
+        -   Reestablecimiento de contraseña de autoservicio
+        -   Autenticacion multifactor
+        -   Integracion hibrida
+        -   Autenticacion sin contraseña
+    
+    Reestablecimiento de contraseña
+
+        Escenarios:
+        -   Cambio de contraseña
+        -   Restablecimiento de contraseña
+        -   Desbloqueo de cuenta (intento fallido de autenticacion)
+
+    Proteccion con contraseña
+
+        -   Bloqueo de contraseñas no seguras
+        -   Definir directivas de Proteccion
+        -   Seguridad hibrida (on premise - nube)
+
+    Complejidad de contraseña
+
+        -   Debe cumplir reglas de Complejidad
+        -   Azure AD utiliza una complejidad predeterminada
+
+    Forzar el Restablecimiento
+
+    Bloqueo inteligente de cuenta
+
+        -   Bloqueo por varios intentos de inicio fallido.
+        -   Administrador de AD debe desbloquear
+
+    Autenticacion sin contraseña
+
+        -   Conveniente y alta seguridad
+        -   Utiliza un mecanismo de autenticacion mediante apñlicaciones de AD
+        -   Azure AD conecta con otros servicios para autenticar sin contraseña
+
+
+Autenticacion con multifactor
+
+    ¿Que es la autenticacion multifactor
+
+        Se basa en los siguientes elementos:
+        -   Algo que se conoce: algo como contraseña y user.
+        -   Algo que se tiene:  Algo como un celular o algun dispositivo.
+        -   Algo que forma parte de ti: Como la huella digital, reconocimiento facial, etc.
+    
+    Acceso condicional
+
+        Crear directivas de acceso y tomar acciones para identificar si el usuario que se esta autenticando,
+        da señales de riesgo o posible riesgo. Azure AD identity Protection, incluye reportes
+        de riesgos, e inicio de sesion riesgosos, y en base a esto se toman acciones, considerando:
+
+        -   señales
+        -   Description
+        -   cumplimiento
+
+Azure Active Directory B2C para apps
+
+    Control de acceso e identidad del consumidor (CIAM)
+
+    -   Acceso a usuarios esternos mediante correos corporativos o externos
+    -   Acceso a usuarios externos mediante redes sociales
+
+    Personalizacion de la experiencia digital
+
+    -   Alineada con la imagen corporativa
+    -   Modelo basado en politicas
+    -   perfil de usuario de forma progresiva
+
+
+    Framework de experiencia de identidad
+
+        - inicio de sesion no centrado en la Personalizacion
+        - El servicio de identidad se levanta en una pagina nueva, y se envía el token
+            a la aplicacion que lo esta requiriendo.
+
+    Modelo basado en politicas
+
+        -   1 a muchos
+        -   Muchos a 1
+        -   ramificacion condicional
+
+    Integracion con sistemas externos
+
+        -   Usuarios conectandose a aplicaciones externas
+        -   B2C
+        -   Sistemas on-premises
+
+
+Autenticacion y Autorizacion
+
+    Autenticacion
+
+    Consiste en demostrar que eres quien dices ser. La plataforma de identidad de Microsoft utiliza 
+    el protocolo OpenID Connect para administrar la autenticación.
+     
+    Autorización
+
+    Conciste en conceder una parte autenticada, permiso para hacer algo.
+
+
+    Combinacion de ambas
+
+    Delegando a AZue AD, permite los siguientes escenarios:
+
+        • Directivas de acceso condicional
+        • Uso de autenticación multifactor
+        • Inicio de sesión único (SSO)
+    
+    Protocolos de autenticación:
+
+        • OAuth frente a OpenID Connect
+        • OAuth frente a SAML
+        • OpenID Connect frente a SAML
+
+
+Tokens
+
+    ¿Que es un token?
+
+    Un token en informática es una cadena de caracteres que tienen un significado 
+    coherente en cierto lenguaje de programación.
+
+    Token de id
+
+    Los tokens de Id de envían a la aplicación cliente como parte de un flujo de OpenID Connect. 
+    Este tipo de token sirve para autenticar al usuario a validar que un usuario es quien dice ser.    
+    
+    
+    Token de acceso
+
+    Es un token de seguridad emitido por un servidor de autorización como parte de un flujo de OAuth 2.0, 
+    incluye información sobre el usuario y el recurso para el que está previsto el token.
+
+
+    Token de actualización:
+
+    Los tokens de acceso solo son validos durante un breve periodo de tiempo, utiliza tokens de actualización 
+    en la aplicación cuando sea necesario
+
+
+    Validación de tokens de seguridad.
+
+    La validación del token la realiza la aplicación para la cual fue generada. Esto ocurre al comprobar 
+    la firma generada utilizando la llave pública del servidor de autorización
+
+
+    Normalmente el servidor de autorización proporciona un par de tokens
+
+        o Token de acceso para acceder a la aplicación o al recurso protegido.
+        o Token de actualización, se utiliza para renovar el token de acceso cuando esta a punto de expirar.
+
+    
+    Instancias de JSON WEB Token y Notificaciones:
+
+        • La plataforma de identidad de Microsoft implementa los tokens de seguridad como instancias de 
+            JSON Web Tokens (JWT) que incluyen notificaciones.
+        • Una notificación proporciona aserciones sobre una entidad, como aplicación cliente o el propietario de 
+            recursos a otra entidad.
+        • Las notificaciones son pares de nombres o valores que se transmiten datos sobre el firmante del token.
+
+    
+        Las aplicaciones puedes usar las notificaciones para tareas como:
+
+            o Validar token
+            o Identificar el inquilino firmante del token
+            o Mostrar información del usuario
+            o Determinar la autorización del firmante
+
+        Una notificación se compone de pares clave-valor que proporcionan información como:
+
+            • El servidor de tokens de seguridad que genero el token
+            • La fecha en que se generó el token
+            • El firmante
+            • La audiencia, que es la aplicación para la cual se generó el token
+            • La aplicación (Cliente) que solicito el token.
+
+
+    Protocolos y tipos de aplicaciones
+
+        La plataforma de identidad de Microsoft admite la autenticación de diversas arquitecturas de aplicaciones modernas, 
+        las cuales están basadas en protocolos estándar del sector OAuth 2.0 u OpenID Connect.
+
+        Debes registrar cada aplicación que utiliza la plataforma de identidad de Microsoft utilizando el 
+        “registro de aplicaciones” dentro del portal de Azure
+
+        Azure de esta manera recopila y asigna los siguientes valores:
+
+            • Identificador de la aplicación (Cliente)
+            • URL de redirección (Para dirigir las respuestas de nuevo a la aplicación)
+            • Tipos de cuentas compatibles.
+
+
+    Introducción a la biblioteca de autenticación MSAL
+
+        La biblioteca de autenticación de Microsoft (MSAL) permite que los desarrolladores adquieran tokens desde la 
+        plataforma de identidad para autenticar usuarios y acceder a API web protegidas.
+
+        Te facilitara el acceso a Microsoft Graph y Otras APIs de Microsoft
+
+        Ventajas de MSAL
+
+            • No tienes que usar directamente las bibliotecas OAuth de manera manual
+            • Adquiere tokens en nombre de un usuario o en nombre de la aplicación
+            • Mantiene en caché tokens y actualiza los tokens en nombre del usuario antes que expiren.
+            • Ayuda a configurar la aplicación mediante app settings
+
+        Escenarios y tipos de aplicación:
+
+        MSAL se puede usar en varios escenarios, incluyendo:
+
+            • Aplicaciones de una sola página utilizando JavaScript
+            • Aplicaciones web que inicia sesión de usuarios.
+            • Aplicaciones web que inician sesión de un usuario y llamada a una API Web
+            • Protección de una API Web
+            • Api web que llama a otra Api Web en nombre del usuario.
+
+        Lenguajes y plataformas de MSAL:
+
+            • Android
+            • Angular
+            • iOS y macOS
+            • JAVA de MSAL
+            • .Js
+            • .Net
+            • Node
+            • Python
+            • React
+
+        Características de Azure Active Directory B2C
+
+            Un inquilino representa la organización y es un directorio de usuarios. Los recursos asociados con un
+            inquilino de Azure Ad B2C incluyen:
+
+                • Directorio
+                • Registros de aplicación
+                • Flujos de usuario y directivas personalizadas
+                • Proveedores de identidad
+                • Claves
+
+            Cuentas en Azure AD B2C:
+
+            En Azure Ad B2C se definen varios tipos de cuentas de usuario, incluyendo:
+
+                • Cuentas profesionales
+                • Cuentas de invitado
+                • Cuenta de consumidor
+
+            Opciones de inicio de sesión en la cuenta local
+
+            Azure AD B2C proporciona varias maneras en la que los usuarios se pueden autenticar, incluyendo:
+
+                • Cuenta local con el nombre de usuario y contraseña
+                • Comprobación por teléfono (autenticación sin contraseña)
+                • Cuenta local utilizando correo electrónico y contraseña
+
+            Atributos del perfil del usuario:
+
+                • Azure AD B2C permite administrar los atributos comunes de los perfiles de cuentas de consumidor 
+                    (nombre, apellidos, ciudad, etc.)
+                • Se puede ampliar el esquema de Azure Ad para almacenar información adicional.
+
+            Experiencias de identidad:
+
+                • Define la lógica de negocios que siguen los usuarios para obtener acceso a una aplicación.
+                • Determinar la serie de pasos que se siguen para iniciar sesión, registrarse, editar un perfil 
+                    o restablecer una contraseña.
+                • Las dos formas de experiencia de los usuarios son:
+                o Flujos de Usuario
+                o Directivas personalizadas
+
+            Flujos de usuario
+
+                • Son directivas configurables, predefinidas e integradas que se proporcionan para crear experiencias 
+                    de registro, inicio de sesión, editar perfil o restablecer contraseña.
+
+
+
+    Tenant en Azure AD
+
+        ¿Que es un Tenant?
+
+            Es la representacion de la organizacion y sus usuarios. Los recursos asociados con un inquilino de Azure Ad B2C incluyen:
+
+                • Directorio
+                • Registros de aplicación
+                • Flujos de usuario y directivas personalizadas
+                • Proveedores de identidad
+                • Claves
+
+    Cuentas en Azure AD B2C:
+
+        En Azure Ad B2C se definen varios tipos de cuentas de usuario, incluyendo:
+
+            • Cuentas profesionales
+            • Cuentas de invitado
+            • Cuenta de consumidor
+
+
+    Opciones de inicio de sesión en la cuenta local
+
+        Azure AD B2C proporciona varias maneras en la que los usuarios se pueden autenticar, incluyendo:
+
+            • Cuenta local con el nombre de usuario y contraseña
+            • Comprobación por teléfono (autenticación sin contraseña)
+            • Cuenta local utilizando correo electrónico y contraseña
+
+        Atributos del perfil del usuario:
+
+            • Azure AD B2C permite administrar los atributos comunes de los perfiles de cuentas de consumidor (nombre, apellidos, ciudad, etc.)
+            • Se puede ampliar el esquema de Azure Ad para almacenar información adicional.
+
+        Experiencias de identidad:
+
+            • Define la lógica de negocios que siguen los usuarios para obtener acceso a una aplicación.
+            • Determinar la serie de pasos que se siguen para iniciar sesión, registrarse, editar un perfil o restablecer una contraseña.
+
+            • Las dos formas de experiencia de los usuarios son:
+                o Flujos de Usuario
+                o Directivas personalizadas
+
+        Flujos de usuario
+
+            • Son directivas configurables, predefinidas e integradas que se proporcionan para crear
+            experiencias de registro, inicio de sesión, editar perfil o restablecer contraseña.
+
+
+
+Flujos de Usuario
+
+    Interfaz de usuario
+
+        Crear experiencias de identidad para las paginas que se muestran, acordes a la imagen corporativa
+
+    Dominio personalizado
+
+        Se puede personalzar el dominio con Azure AD B2C, para mejorar la experiencia durante el inicio de sesión.
+
+    Localización
+
+        La personalización del idioma en Azure AD B2C permite albergar distintos idiomas para satisfacer 
+        las necesidades de los clientes.
+    
+    Comprobación de correo electrónico:
+
+        Azure AD B2C valida que las direcciones de correo utilizadas sean validas al realizar un proceso de 
+        comprobación lo cual facilita el proceso de restablecimiento de contraseña.
