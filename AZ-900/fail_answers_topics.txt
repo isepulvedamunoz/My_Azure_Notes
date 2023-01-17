@@ -1,0 +1,14 @@
+AZ-900 PRACTICE TEST
+
+- Data Bases, postgres sql
+- Data resources from on-premises
+- Azure subscriptions types
+- Azure AD characteristics
+- Azure cloud shell characteristics
+- Azure Blueprints
+- RBAC
+- Azure locks
+- Capex, Opex
+- Security recomendations
+- Resource group definition
+-  
